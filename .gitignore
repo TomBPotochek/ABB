@@ -1,0 +1,8 @@
+
+*.dev
+*.layout
+*.o
+*.win
+*.exe
+./src/*.o
+*.cbp
