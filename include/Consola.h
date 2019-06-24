@@ -5,6 +5,8 @@
 class Consola {
 
     public:
+        // PRE: --
+        // POST: la consola queda lista para usar
         Consola();
 
 
