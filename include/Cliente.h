@@ -9,10 +9,17 @@ class Cliente {
         unsigned long telefono;
 
     public:
-
+        //Costructor
+        //PRE: Se debe respetar el tipo de dato de los parametros.
+        //POST: Crea un objeto de clase cliente.
         Cliente (unsigned long telefono);
-        
+
+        //PRE: --
+        //POST: Devuelve el telefono del cliente.
         unsigned long obtenerTelefono ();
+
+        //PRE: Se debe respetar el tipo de dato de los parametros.
+        //POST: Modifica el telefono del cliente.
         void asignarTelefono (unsigned long dato);
 
 
