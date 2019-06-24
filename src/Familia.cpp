@@ -15,7 +15,7 @@ Lista<string>* Familia::obtenerNombre(){
 void Familia::imprimirIntegrantes(){
     nombres->iniciarCursor();
     while (nombres->avanzarCursor())
-        cout << nombres->obtenerCursor(); 
+        cout << nombres->obtenerCursor() << endl; 
 }
 
 
