@@ -21,3 +21,8 @@ double Individuo::calcularPrecio (int precio){
     double precioTotal = precio*(1-descuento);
     return precioTotal;
 }
+
+
+void Individuos::imprimirIntegrantes (){
+    cout << this->nombre << endl;
+}
