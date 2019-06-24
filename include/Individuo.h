@@ -16,7 +16,7 @@ class Individuo : public Cliente {
         //Costructor
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Crea un objeto de clase Individuo.
-        Individuo (string nombre, double descuento):Cliente (unsigned long telefono);
+        Individuo (string nombre, double descuento):Cliente (std::string telefono);
 
         //PRE:--
         //POST: Devulve el nombre del individuo.

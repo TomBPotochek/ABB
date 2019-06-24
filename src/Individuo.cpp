@@ -1,7 +1,7 @@
 #include "Individuo.h"
 
 
-Individuo::Individuo (string nombre, double descuento):Cliente(unsigned long telefono) {
+Individuo::Individuo (string nombre, double descuento):Cliente(std::string telefono) {
     this->nombre = nombre;
     this->descuento = descuento;
 }
