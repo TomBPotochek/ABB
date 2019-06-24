@@ -1,6 +1,6 @@
-#include <Persona.h>
+#include "Cliente.h"
 
-Cliente::Cliente (unsigned long telefono){
+Cliente::Cliente (string telefono){
     this->telefono = telefono;
 }
 
@@ -9,7 +9,7 @@ unsigned long Cliente::obtenerTelefono (){
 }
 
 
-void Cliente::asignarTelefono (unsigned long telefono){
+void Cliente::asignarTelefono (string telefono){
     this->telefono = telefono;
 }
 

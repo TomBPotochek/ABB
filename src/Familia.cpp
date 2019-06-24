@@ -1,24 +1,32 @@
-#include <Familia.h>
-/* Deberia estar con Arbols
+#include "Familia.h"
+//#include "Consola.h"
+#include "Lista.h"
 
-Familia::Familia (string nombre, double descuento){
-    this->nombre = nombre;
-    this->descuento = DESCUENTO;
+
+Familia::Familia (Lista<string>* nombres, double descuento):Cliente (unsigned long telefono) {
+    this->nombres = nombres;
+    this->descuento = descuento;
 }
 
-string Familia::obtenerNombre (){
-    return this->nombre;
+Lista<string>* Familia::obtenerNombre(){
+    return this->nombres;
+}
+
+void Familia::listarNombres(){
+    nombres->iniciarCursor();
+    while (nombres->avanzarCursor())
+        cout << nombres->obtenerCursor();  //usa la consola para imprimir
 }
 
 
-void Familia::asignarNombre (string nombre){
-    this->nombre = nombre;
+void Familia::asignarNombre (Lista<string>* nombres){
+    this->nombres = nombres;
 }
 
-*/
+
 
 double Familia::calcularPrecio (int precio){
-    double precioTotal = precio*descuento;
+    double precioTotal = nombres->tamanio*precio*(1-descuento);
     return precioTotal;
 }
 

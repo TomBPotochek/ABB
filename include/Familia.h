@@ -1,27 +1,41 @@
 #ifndef FAMILIA_H
 #define FAMILIA_H
+
 #include <iostream>
 
-#define DESCUENTO = 0.35;
+//#define DESCUENTO_F = 0.35;
 
 class Familia : public Cliente {
 
     private:
 
-        "Arbol" nombre; //esto en realidad deberia ser una Arbol de nombres
+        Lista<string>* nombres;
         double descuento;
 
 
     public:
 
-        Familia (string nombre, double descuento);
+        //Costructor
+        //PRE: Se debe respetar el tipo de dato de los parametros.
+        //POST: Crea un objeto de clase Familia.
+        Familia (Lista<string>* nombres, double descuento):Cliente (unsigned long telefono);
 
+        //PRE:--
+        //POST: Dvuelve los nombres de la familia.
+        Lista<string>* obtenerNombre ();
 
-        string obtenerNombre ();
-        void asignarNombre (string nombre);
+        //PRE: Se debe respetar el tipo de dato de los parametros.
+        //POST: Modifica los nombres de los integrantes de la familia.
+        void asignarNombre (Lista<string>* nombres);
 
-
+        //PRE: Se debe respetar el tipo de dato de los parametros.
+        //POST: Devuelve el precio total a pagar por la familia.
         double calcularPrecio (int precio);
+
+        //PRE:--
+        //POST: Lista los nombres de los integrantes de la familia.
+        void listarNombres();
+
 
 };
 
