@@ -1,4 +1,6 @@
-#include <Familia.h>
+#include "Familia.h"
+#include "Consola.h"
+#include "Lista.h"
 
 
 Familia::Familia (Lista<string>* nombres, double descuento):Cliente (unsigned long telefono) {
@@ -10,6 +12,12 @@ string Familia::obtenerNombre(){
     return this->nombres;
 }
 
+void Familia::listarNombres(){
+    nombres->iniciarCursor();
+    while (nombres->avanzarCursor())
+        consola->imprimir(nombres->obtenerCursor());  //usa la consola para imprimir
+}
+
 
 void Familia::asignarNombre (Lista<string>* nombres){
     this->nombres = nombres;
@@ -18,7 +26,7 @@ void Familia::asignarNombre (Lista<string>* nombres){
 
 
 double Familia::calcularPrecio (int precio){
-    double precioTotal = precio*descuento;
+    double precioTotal = nombres->tamanio*precio*(1-descuento);
     return precioTotal;
 }
 

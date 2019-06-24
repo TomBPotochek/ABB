@@ -1,4 +1,4 @@
-#include <Persona.h>
+#include "Cliente.h"
 
 Cliente::Cliente (unsigned long telefono){
     this->telefono = telefono;
