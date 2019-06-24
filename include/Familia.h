@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-//#define DESCUENTO_F = 0.35;
+const double DESCUENTO_F = 0.35;
 
 class Familia : public Cliente {
 

@@ -2,7 +2,7 @@
 #define INDIVIDUO_H
 #include <iostream>
 
-//#define DESCUENTO_I = 0.10;
+const double DESCUENTO_I = 0.10;
 
 class Individuo : public Cliente {
 
