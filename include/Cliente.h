@@ -6,21 +6,21 @@ class Cliente {
 
     private:
 
-        unsigned long telefono;
+        string telefono;
 
     public:
         //Costructor
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Crea un objeto de clase cliente.
-        Cliente (unsigned long telefono);
+        Cliente (string telefono);
 
         //PRE: --
         //POST: Devuelve el telefono del cliente.
-        unsigned long obtenerTelefono ();
+        string obtenerTelefono ();
 
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Modifica el telefono del cliente.
-        void asignarTelefono (unsigned long dato);
+        void asignarTelefono (string dato);
 
 
         virtual double calcularPrecio (int precio) = 0;
