@@ -2,7 +2,7 @@
 #define INDIVIDUO_H
 #include <iostream>
 
-const double DESCUENTO_I = 0.10;
+//#define DESCUENTO_I = 0.10;
 
 class Individuo : public Cliente {
 
@@ -29,6 +29,8 @@ class Individuo : public Cliente {
         //PRE: Se debe respetar el tipo de dato de los parametros
         //POST: Devuelve el precio total a pagar del individuo.
         double calcularPrecio (int precio);
+
+        void imprimirIntegrantes ();
 
 };
 
