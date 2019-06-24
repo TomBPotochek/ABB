@@ -1,21 +1,21 @@
 #include <Familia.h>
-/* Deberia estar con listas
 
-Familia::Familia (string nombre, double descuento){
-    this->nombre = nombre;
-    this->descuento = DESCUENTO;
+
+Familia::Familia (Lista<string>* nombres, double descuento):Cliente (unsigned long telefono) {
+    this->nombres = nombres;
+    this->descuento = DESCUENTO_F;
 }
 
-string Familia::obtenerNombre (){
-    return this->nombre;
+string Familia::obtenerNombre(){
+    return this->nombres;
 }
 
 
-void Familia::asignarNombre (string nombre){
-    this->nombre = nombre;
+void Familia::asignarNombre (Lista<string>* nombres){
+    this->nombres = nombres;
 }
 
-*/
+
 
 double Familia::calcularPrecio (int precio){
     double precioTotal = precio*descuento;

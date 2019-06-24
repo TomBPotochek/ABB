@@ -1,9 +1,9 @@
 #include <Individuo.h>
 
 
-Individuo::Individuo (string nombre, double descuento){
+Individuo::Individuo (string nombre, double descuento):Cliente(unsigned long telefono) {
     this->nombre = nombre;
-    this->descuento = DESCUENTO;
+    this->descuento = DESCUENTO_I;
 }
 
 string Individuo::obtenerNombre (){

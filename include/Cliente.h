@@ -11,7 +11,7 @@ class Cliente {
     public:
 
         Cliente (unsigned long telefono);
-
+        
         unsigned long obtenerTelefono ();
         void asignarTelefono (unsigned long dato);
 

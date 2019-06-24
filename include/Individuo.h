@@ -2,7 +2,7 @@
 #define INDIVIDUO_H
 #include <iostream>
 
-#define DESCUENTO = 0.10;
+#define DESCUENTO_I = 0.10;
 
 class Individuo : public Cliente {
 
@@ -14,10 +14,11 @@ class Individuo : public Cliente {
 
     public:
 
-        Individuo (string nombre, double descuento);
+        Individuo (string nombre, double descuento):Cliente (unsigned long telefono);
 
 
         string obtenerNombre ();
+        
         void asignarNombre (string nombre);
 
 

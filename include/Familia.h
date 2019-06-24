@@ -2,26 +2,29 @@
 #define FAMILIA_H
 #include <iostream>
 
-#define DESCUENTO = 0.35;
+#define DESCUENTO_F = 0.35;
 
 class Familia : public Cliente {
 
     private:
 
-        "lista" nombre; //esto en realidad deberia ser una lista de nombres
+        Lista<string>* nombres;
         double descuento;
 
 
     public:
 
-        Familia (string nombre, double descuento);
+        Familia (Lista<string>* nombres, double descuento):Cliente (unsigned long telefono);
 
-
-        string obtenerNombre ();
-        void asignarNombre (string nombre);
-
+        Lista<string>* obtenerNombre ();
+        
+        void asignarNombre (Lista<string>* nombres);
 
         double calcularPrecio (int precio);
+        
+    private:
+        
+        void listarNombres();
 
 };
 
