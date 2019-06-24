@@ -34,7 +34,7 @@ class Familia : public Cliente {
 
         //PRE:--
         //POST: Lista los nombres de los integrantes de la familia.
-        void listarNombres();
+        void imprimirIntegrantes ();
 
 
 };

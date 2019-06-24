@@ -12,10 +12,10 @@ Lista<string>* Familia::obtenerNombre(){
     return this->nombres;
 }
 
-void Familia::listarNombres(){
+void Familia::imprimirIntegrantes(){
     nombres->iniciarCursor();
     while (nombres->avanzarCursor())
-        cout << nombres->obtenerCursor();  //usa la consola para imprimir
+        cout << nombres->obtenerCursor(); 
 }
 
 
