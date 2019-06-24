@@ -5,7 +5,7 @@
 
 Familia::Familia (Lista<string>* nombres, double descuento):Cliente (unsigned long telefono) {
     this->nombres = nombres;
-    this->descuento = DESCUENTO_F;
+    this->descuento = descuento;
 }
 
 string Familia::obtenerNombre(){

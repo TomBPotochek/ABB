@@ -1,7 +1,7 @@
 #ifndef FAMILIA_H
 #define FAMILIA_H
 
-#define DESCUENTO_F = 0.35;
+//#define DESCUENTO_F = 0.35;
 
 class Familia : public Cliente {
 
