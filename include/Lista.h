@@ -1,5 +1,5 @@
-#ifndef LISTA_H_
-#define LISTA_H_
+#ifndef Lista_H_
+#define Lista_H_
 
 #include "Nodo.h"
 
@@ -237,4 +237,4 @@ template<class T> Nodo<T>* Lista<T>::obtenerNodo(unsigned int posicion) {
     return actual;
 }
 
-#endif /* LISTA_H_ */
+#endif /* Lista_H_ */

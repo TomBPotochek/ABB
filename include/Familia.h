@@ -8,7 +8,7 @@ class Familia : public Cliente {
 
     private:
 
-        "lista" nombre; //esto en realidad deberia ser una lista de nombres
+        "Arbol" nombre; //esto en realidad deberia ser una Arbol de nombres
         double descuento;
 
 

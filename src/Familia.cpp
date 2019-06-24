@@ -1,5 +1,5 @@
 #include <Familia.h>
-/* Deberia estar con listas
+/* Deberia estar con Arbols
 
 Familia::Familia (string nombre, double descuento){
     this->nombre = nombre;
