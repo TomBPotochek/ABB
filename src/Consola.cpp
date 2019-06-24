@@ -13,8 +13,8 @@ void Consola::imprimirMenu(){
          << "1. Consultar precio" << endl
          << "2. Agregar un nuevo cliente" << endl
          << "3. Dar de baja un cliente" << endl
-         << "4. Listar clientes" << endl;
-         << "5. Buscar cliente" << endl;
+         << "4. Listar clientes" << endl
+         << "5. Buscar cliente" << endl
          << "6. Salir" << endl << endl;
 
 }
@@ -34,4 +34,11 @@ int Consola::ingresarOpcion() {
 
     return opcion;
 }
+
+void Consola::imprimir (dato){
+    cout << dato << endl;
+}
+
+
+
 

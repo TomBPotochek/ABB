@@ -14,6 +14,8 @@ class Consola {
         // POST: Devuelve la opcion ingresada por el usuario loego de corroborar que sea correcta.
         int ingresarOpcion();
 
+        void imprimir (dato);
+
 };
 
 #endif // CONSOLA_H
