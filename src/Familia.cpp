@@ -1,5 +1,5 @@
 #include "Familia.h"
-#include "Consola.h"
+//#include "Consola.h"
 #include "Lista.h"
 
 
@@ -8,14 +8,14 @@ Familia::Familia (Lista<string>* nombres, double descuento):Cliente (unsigned lo
     this->descuento = descuento;
 }
 
-string Familia::obtenerNombre(){
+Lista<string>* Familia::obtenerNombre(){
     return this->nombres;
 }
 
 void Familia::listarNombres(){
     nombres->iniciarCursor();
     while (nombres->avanzarCursor())
-        consola->imprimir(nombres->obtenerCursor());  //usa la consola para imprimir
+        cout << nombres->obtenerCursor();  //usa la consola para imprimir
 }
 
 
