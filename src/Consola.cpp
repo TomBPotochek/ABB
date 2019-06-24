@@ -35,9 +35,6 @@ int Consola::ingresarOpcion() {
     return opcion;
 }
 
-void Consola::imprimir (dato){
-    cout << dato << endl;
-}
 
 
 
