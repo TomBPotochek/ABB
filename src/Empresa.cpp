@@ -1,7 +1,6 @@
 #include "Empresa.h"
 #include "Lista.h"
 #include "ABB.h"
-#include <sstream>
 
 Empresa::Empresa() {
     this->clientes = 0;
@@ -59,11 +58,12 @@ unsigned long int Empresa::procesarTelefono(string strTelefono) {
 	return telefono;
 }
 
-void Empresa::bajarCliente(Cliente* cliente){
-	if( !this->clientes->eliminar(TClave clave))
-        this->consola.mensaje("El cliente no existía");
-    else
-        this->consola.mensaje("Cliente borrado");
+bool Empresa::agregarCliente(Cliente* cliente){
+	return this->clientes->agregar(cliente->obtenerTelefono(), cliente);
+}
+
+bool Empresa::bajarCliente(Cliente* cliente){
+	return this->clientes->eliminar(TClave clave);
 }
 
 void Empresa::listarClientes(){
@@ -103,7 +103,7 @@ void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los ca
     switch(opcion) {
 
         case 1: this->consultarPrecio(this->buscarCliente(this->consola.ingresarTelefono()), this->consola.ingresarPrecio()); break;
-        case 2: this->ingresarCliente(); break;
+        case 2: this->agregarCliente(this->consola.ingresarCliente()); break;
         case 3: this->bajarCliente(this->buscarCliente(this->consola.ingresarTelefono())); break;
         case 4: this->listarClientes(); break;
         case 5: this->imprimirCliente(this->buscarCliente(this->consola.ingresarTelefono())); break;
@@ -136,10 +136,7 @@ void Empresa::ingresarCliente(){
     } else 
         Individuo* clienteNuevo = new Individuo(nombre, telefonoNuevo);
            
-    this->clientes->agregar(telefonoNuevo, clienteNuevo);
-    stringstream aux; aux << telefonoNuevo;
-    this->consola("su telefono es: "+aux.str());
-       
+    this->clientes->agregar(telefonoNuevo, clienteNuevo);   
 }
 
 Empresa::~Empresa() {
