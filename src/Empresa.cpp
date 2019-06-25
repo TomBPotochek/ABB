@@ -10,12 +10,13 @@ Empresa::Empresa() {
 
 void Empresa::cargarClientes(const char* nombreArchivo){
     ifstream archivo(nombreArchivo);
-    this->clientes = new ABB<std::string, Cliente*>;
+    this->clientes = new ABB<unsigned long int, Cliente*>;
     
     if (archivo.is_open()) {
+    	string linea;
         while (!archivo.eof()){ //o tal vez tenga que ser "while(getline(linea))" ?
             linea = getline(archivo);
-            this->cargarCliente(std::string linea);
+            this->cargarCliente(linea);
         }        
     }
     archivo.close();
