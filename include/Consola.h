@@ -17,6 +17,22 @@ class Consola {
 
         // POST: Devuelve la opcion ingresada por el usuario loego de corroborar que sea correcta.
         int ingresarOpcion();
+        
+        Cliente* ingresarCliente();
+        
+        unsigned long int ingresarTelefono();
+        
+        void errorClienteNoEncontrado();
+        
+        float ingresarPrecio();
+        
+        void imprimirPrecio(float precio);
+        
+        
+        
+        
+        
+        
 };
 
 #endif // CONSOLA_H

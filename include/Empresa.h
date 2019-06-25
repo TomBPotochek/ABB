@@ -35,7 +35,7 @@ class Empresa {
     	
     	// PRE: --
         // POST: libera los recursos asociados
-        void cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea);
+        void cargarCliente(std::string linea);
         
         // PRE: --
         // POST: libera los recursos asociados
