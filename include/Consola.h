@@ -2,9 +2,6 @@
 #define CONSOLA_H
 
 #include <iostream>
-#include <string>
-
-using namespace std;
 
 class Consola {
 
@@ -44,12 +41,12 @@ class Consola {
 		void errorClienteNoEncontrado();
 
 		// PRE: --
-		// POST: Devuelve un precio ingresado por el usuario
-		double ingresarPrecio();
+		// POST: Devuelve un precio ingresado por el usuario		
+		double ingresarPrecio()
 
 		// PRE: --
 		// POST: muestra por consola un precio
-		void imprimirPrecio(float precio);
+		void imprimirPrecio(float precio)
 };
 
 #endif // CONSOLA_H

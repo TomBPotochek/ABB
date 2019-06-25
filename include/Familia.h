@@ -1,9 +1,7 @@
 #ifndef FAMILIA_H
 #define FAMILIA_H
 
-#include <Cliente.h>
 #include <iostream>
-#include <Lista.h>
 
 const double DESCUENTO_F = 0.35;
 
@@ -20,7 +18,7 @@ class Familia : public Cliente {
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Crea un objeto de clase Familia.
 
-        Familia (Lista<string>* nombres, unsigned long int telefono);
+        Familia (Lista<string>* nombres):Cliente (telefono);
 
         //PRE:--
         //POST: Dvuelve los nombres de la familia.
