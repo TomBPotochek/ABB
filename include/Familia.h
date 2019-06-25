@@ -10,7 +10,6 @@ class Familia : public Cliente {
     private:
 
         Lista<string>* nombres;
-        double descuento;
 
 
     public:

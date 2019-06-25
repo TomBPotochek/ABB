@@ -5,7 +5,7 @@
 
 Familia::Familia (Lista<string>* nombres, double descuento):Cliente (telefono) {
     this->nombres = nombres;
-    this->descuento = descuento;
+    this->descuento = DESCUENTO_F;
 }
 
 Lista<string>* Familia::obtenerNombre(){
@@ -16,7 +16,7 @@ void Familia::imprimirDatos(){
     cout << telefono << endl;
     nombres->iniciarCursor();
     while (nombres->avanzarCursor())
-        cout << nombres->obtenerCursor() << endl; 
+        cout << nombres->obtenerCursor() << endl;
 }
 
 

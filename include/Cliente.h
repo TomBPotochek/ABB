@@ -7,6 +7,7 @@ class Cliente {
     private:
 
         string telefono;
+        double descuento;
 
     public:
         //Costructor

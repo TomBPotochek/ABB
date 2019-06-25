@@ -3,7 +3,7 @@
 
 Individuo::Individuo (string nombre, double descuento):Cliente(telefono) {
     this->nombre = nombre;
-    this->descuento = descuento;
+    this->descuento = DESCUENTO_I;
 }
 
 string Individuo::obtenerNombre (){

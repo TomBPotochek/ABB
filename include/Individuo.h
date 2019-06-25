@@ -9,7 +9,6 @@ class Individuo : public Cliente {
     private:
 
         string nombre;
-        double descuento;
 
 
     public:
