@@ -4,11 +4,7 @@ Empresa::Empresa() {
     this->clientes = 0;
 }
 
-void Empresa::cargarClientes() {
-	this->clientes = crearABBDeClientes("clientes.csv");
-}
-
-void cargarArchivo(const char* nombreArchivo){
+void Empresa::cargarClientes(const char* nombreArchivo){
     ifstream archivo(nombreArchivo);
     this->clientes = new ABB<std::string, Cliente*>;
     
@@ -16,15 +12,12 @@ void cargarArchivo(const char* nombreArchivo){
         while (!archivo.eof()){ //o tal vez tenga que ser "while(getline(linea))" ?
             linea = getline(archivo);
             this->cargarCliente(std::string linea);
-            
         }        
     }
-
     archivo.close();
 }
 
-
-void cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea){
+void Empresa::cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea){
     unsigned int posComa = linea.find(",");
     unsigned long int = this->procesarTelefono(linea.substr(0,pos));
 
@@ -50,7 +43,7 @@ void cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea){
     }
 }
 
-unsigned long int procesarTelefono(string strTelefono) {
+unsigned long int Empresa::procesarTelefono(string strTelefono) {
 
 	unsigned long int telefono;
 	stringstream ssTelefono(strTelefono);
@@ -112,7 +105,7 @@ void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los ca
     }
 }
 
-void Empresa::consultarPrecio(Cliente* cliente, float precio){
+void Empresa::consultarPrecio(Cliente* cliente, double precio){
 	this->consola.imprimirPrecio((1 - cliente->obtenerDescuento() ) * precio);
 }
 
