@@ -2,15 +2,11 @@
 
 using namespace std;
 
-
-
-
 int main() {
-
+    
     Empresa empresa;
-    empresa.cargarClientes("clientes.txt");
+    empresa.cargarClientes("Clientes.csv");
     empresa.menuOperativo();
-
-
+    
     return 0;
 }

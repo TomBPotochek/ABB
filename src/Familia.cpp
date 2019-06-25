@@ -3,7 +3,7 @@
 #include "Lista.h"
 
 
-Familia::Familia (Lista<string>* nombres, unsigned long int telefono): Cliente (telefono) {
+Familia::Familia (Lista<string>* nombres):Cliente (telefono) {
     this->nombres = nombres;
     this->descuento = DESCUENTO_F;
 }
@@ -27,7 +27,7 @@ void Familia::asignarNombre (Lista<string>* nombres){
 
 
 double Familia::calcularPrecio (int precio){
-    double precioTotal = nombres->contarElementos()*precio*(1-descuento);
+    double precioTotal = nombres->tamanio*precio*(1-descuento);
     return precioTotal;
 }
 
