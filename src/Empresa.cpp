@@ -17,7 +17,7 @@ void Empresa::cargarClientes(const char* nombreArchivo){
     archivo.close();
 }
 
-void Empresa::cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea){
+void Empresa::cargarCliente(std::string linea){
     unsigned int posComa = linea.find(",");
     unsigned long int = this->procesarTelefono(linea.substr(0,pos));
 

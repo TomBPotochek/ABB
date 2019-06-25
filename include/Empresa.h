@@ -34,27 +34,27 @@ class Empresa {
     private:
     	
     	// PRE: --
-        // POST: agrega al árbol un cliente leído del archivo
-        void cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea);
+        // POST: libera los recursos asociados
+        void cargarCliente(std::string linea);
         
-        // PRE: el texto debe no tener caracteres no numéricos
-        // POST: convierte el número de teléfono de texto a numérico
+        // PRE: el texto debe no tener caracteres no numï¿½ricos
+        // POST: convierte el nï¿½mero de telï¿½fono de texto a numï¿½rico
         unsigned long int procesarTelefono(string strTelefono);
         
         // PRE: --
-        // POST: agrega al árbol un cliente ingresado por el usuario, devuelve TRUE si tuvo éxito o FALSE si ya existía
+        // POST: agrega al ï¿½rbol un cliente ingresado por el usuario, devuelve TRUE si tuvo ï¿½xito o FALSE si ya existï¿½a
         bool agregarCliente(Cliente* cliente);
         
         // PRE: --
-        // POST: elimina del árbol el cliente ingresado por el usuario, devuelve TRUE si tuvo éxito o FALSE si no existía
+        // POST: elimina del ï¿½rbol el cliente ingresado por el usuario, devuelve TRUE si tuvo ï¿½xito o FALSE si no existï¿½a
         bool bajarCliente(Cliente* cliente);
         
         // PRE: --
-        // POST: imprime la información de todos los clientes
+        // POST: imprime la informaciï¿½n de todos los clientes
         void listarClientes();
 		
 		// PRE: --
-        // POST: imprime la información del cliente que se pasa por parámetro
+        // POST: imprime la informaciï¿½n del cliente que se pasa por parï¿½metro
 		void imprimirCliente(Cliente* cliente);
 		
 		// PRE: --
