@@ -30,7 +30,11 @@ class Empresa {
         // PRE: se cargaron clientes con 'cargarClientes()'
         // POST: interactua con el usuario mediante un menu para realizar operaciones
         void menuOperativo();
-    	
+                
+        // PRE: --
+        // POST: libera los recursos asociados
+        ~Empresa();
+        
     private:
     	
     	// PRE: --
@@ -68,10 +72,6 @@ class Empresa {
         // PRE: 1 <= opcion <= 6
         // POST: lleva a cabo la operacion indicada por 'opcion'
         void realizarOperacion(int opcion);
-        
-        // PRE: --
-        // POST: libera los recursos asociados
-        ~Empresa();
 };
 
 #endif // EMPRESA_H
