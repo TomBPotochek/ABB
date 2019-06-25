@@ -94,7 +94,7 @@ void Empresa::menuOperativo(){
 	}
 }
 
-void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los casos
+void Empresa::realizarOperacion(int opcion) {
 
     switch(opcion) {
 
