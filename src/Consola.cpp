@@ -2,10 +2,6 @@
 
 using namespace std;
 
-Consola::Consola()
-{
-    //ctor
-}
 
 void Consola::imprimirMenu(){
 
@@ -16,7 +12,6 @@ void Consola::imprimirMenu(){
          << "4. Listar clientes" << endl
          << "5. Buscar cliente" << endl
          << "6. Salir" << endl << endl;
-
 }
 
 int Consola::ingresarOpcion() {
@@ -26,7 +21,7 @@ int Consola::ingresarOpcion() {
 
     while (!opcionValida) {
         cin >> opcion;
-        opcionValida = (opcion > 0 && opcion < 5);
+        opcionValida = (opcion > 0 && opcion < 7);
 
         if (!opcionValida)
             cout << endl << "Ingrese una opcion valida.";
@@ -34,23 +29,59 @@ int Consola::ingresarOpcion() {
 
     return opcion;
 }
-
-Cliente* Consola::ingresarCliente() {
 	
+
+string ingresarNombre() {
+
+	string nombre;
+
+	cout << "Ingrese el nombre de la persona";
+	cin << nombre;
+
+	return nombre;
+}
+
+void imprimirMensaje(string mensaje) {
+
+	cout << endl << mensaje << endl;
 }
 
 unsigned long int Consola::ingresarTelefono(){
-	
+
+	unsigned long int telefono;
+
+	cout << endl << "Ingrese el numero del cliente" << endl;
+	cin << telefono;
+
+	return telefono;
 }
 
-void errorClienteNoEncontrado() {
-	
+bool Consola::continuarIngresando() {
+
+	char opcion;
+
+	cout << intro << endl << "Desea continuar ingresando nombres? s/n";
+	cin opcion;
+
+	return (opcion == 's')
 }
 
-float ingresarPrecio(){
-	
+void Consola::errorClienteNoEncontrado() {
+
+	cout << endl << "Error: no existe un cliente con el telefono ingresado";
 }
 
-void imprimirPrecio(double precio){
-	
+double ingresarPrecio(){
+
+	double precio;
+
+	cout << endl << "Ingrese el precio fijo del producto" << endl;
+	cin << precio;
+
+	return precio;
+}
+
+void imprimirPrecio(float precio){
+
+	cout << endl << "Precio a pagar: " << precio << endl; 
 }
