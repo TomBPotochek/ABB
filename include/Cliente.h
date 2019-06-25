@@ -29,6 +29,8 @@ class Cliente {
         virtual void imprimirDatos () = 0;
 
         virtual double calcularPrecio (int precio) = 0;
+        
+        void eliminarDatos();
 
 };
 
