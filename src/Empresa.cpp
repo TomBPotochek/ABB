@@ -1,10 +1,7 @@
 #include "Empresa.h"
-#include "Lista.h"
-#include "ABB.h"
 
 Empresa::Empresa() {
     this->clientes = 0;
-    this->consola = 0;
     this->semilla = 10086200;
 }
 
@@ -30,7 +27,7 @@ void Empresa::cargarCliente(std::string linea){
     posComa = linea.find(",");
 
     if (posComa == string::npos) {
-        Individuo* individuo = new Individuo(linea, telefono); //era asi para usar el constructor heredado de cliente?
+        Individuo* individuo = new Individuo(linea, telefono);
         this->clientes->agregar(telefono, individuo);
 
     } else {
@@ -43,6 +40,8 @@ void Empresa::cargarCliente(std::string linea){
             linea = linea.substr(posComa+1);
             posComa = linea.find(",");
         }
+        nombre = linea.substr(0,posComa);
+        nombres->agregar(nombre);
 
         Familia* familia = new Familia(nombres, telefono);
         this->clientes->agregar(telefono, familia);
@@ -63,8 +62,10 @@ bool Empresa::agregarCliente(Cliente* cliente){
 	return this->clientes->agregar(cliente->obtenerTelefono(), cliente);
 }
 
-bool Empresa::bajarCliente(unsigned long int telefono){
-	return this->clientes->eliminar(telefono);
+void Empresa::bajarCliente(unsigned long int telefono){
+
+    if (!this->clientes->eliminar(telefono))
+        this->consola.errorClienteNoEncontrado();
 }
 
 void Empresa::listarClientes(){
@@ -104,7 +105,7 @@ void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los ca
     switch(opcion) {
 
         case 1: this->consultarPrecio(this->buscarCliente(this->consola.ingresarTelefono()), this->consola.ingresarPrecio()); break;
-        case 2: this->agregarCliente(this->consola.ingresarCliente()); break;
+        case 2: this->agregarCliente(this->ingresarCliente()); break;
         case 3: this->bajarCliente(this->consola.ingresarTelefono()); break;
         case 4: this->listarClientes(); break;
         case 5: this->imprimirCliente(this->buscarCliente(this->consola.ingresarTelefono())); break;
@@ -112,32 +113,37 @@ void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los ca
 }
 
 void Empresa::consultarPrecio(Cliente* cliente, double precio){
-	this->consola.imprimirPrecio((1 - cliente->obtenerDescuento() ) * precio);
+
+	double total = cliente->calcularPrecio(precio);
+
+	this->consola.imprimirPrecio(total);
 }
 
-void Empresa::ingresarCliente(){
+Cliente* Empresa::ingresarCliente(){
+
+    while(this->clientes->buscar(this->semilla) != 0)
+        this->semilla++;
+
     unsigned long int telefonoNuevo = this->semilla;
-    while(this->clientes->buscar(telefonoNuevo) != 0)
-        telefonoNuevo++;
-    
-    this->consola.mensaje("Ingrese nombre: ");
+
     std::string nombre = this->consola.ingresarNombre();
-    this->consola.mensaje("Si ingresa más nombres, será contado como familia");
+    this->consola.imprimirMensaje("Si ingresa más nombres, será contado como familia");
     bool opcion = this->consola.continuarIngresando();
+    Cliente* clienteNuevo;
+
     if (opcion) {
         Lista<std::string>* nombres = new Lista<std::string>;
         nombres->agregar(nombre);
         while (opcion){
-            this->consola.mensaje("Ingrese nombre: ");
             nombre = this->consola.ingresarNombre();
             nombres->agregar(nombre);
             opcion = this->consola.continuarIngresando();
         }
-        Familia* clienteNuevo = new Familia(nombres, telefonoNuevo);
-    } else 
-        Individuo* clienteNuevo = new Individuo(nombre, telefonoNuevo);
-           
-    this->clientes->agregar(telefonoNuevo, clienteNuevo);   
+        clienteNuevo = new Familia(nombres, telefonoNuevo);
+    } else
+        clienteNuevo = new Individuo(nombre, telefonoNuevo);
+
+    return clienteNuevo;
 }
 
 Empresa::~Empresa() {

@@ -10,11 +10,6 @@ class Consola {
 
     public:
 
-        // PRE: --
-        // POST: la consola queda lista para usar
-        Consola();
-
-
 		// PRE: --
         // POST: muestra por consola el menu de operaciones
         void imprimirMenu();

@@ -20,7 +20,7 @@ class Empresa {
         ABB<unsigned long int, Cliente*>* clientes;
 
         Consola consola;
-        
+
         unsigned long int semilla;
 
     public:
@@ -46,18 +46,20 @@ class Empresa {
     	// PRE: --
         // POST: agrega al �rbol un cliente le�do del archivo
         void cargarCliente(std::string linea);
-        
+
         // PRE: el texto debe no tener caracteres no num�ricos
         // POST: convierte el n�mero de tel�fono de texto a num�rico
         unsigned long int procesarTelefono(string strTelefono);
 
+
+        Cliente* ingresarCliente();
         // PRE: --
         // POST: agrega al arbol un cliente ingresado por el usuario, devuelve TRUE si tuvo exito o FALSE si ya existia
         bool agregarCliente(Cliente* cliente);
 
         // PRE: --
-        // POST: elimina del arbol el cliente con telefono indicado, devuelve TRUE si tuvo exito o FALSE si no existia
-        bool bajarCliente(unsigned long int telefono);
+        // POST: elimina del arbol el cliente con telefono indicado
+        void bajarCliente(unsigned long int telefono);
 
         // PRE: --
         // POST: imprime la informacion de todos los clientes

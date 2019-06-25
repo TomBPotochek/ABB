@@ -24,6 +24,5 @@ double Individuo::calcularPrecio (int precio){
 
 
 void Individuo::imprimirDatos (){
-    cout << this->telefono << endl;
-    cout << this->nombre << endl;
+    cout << endl << this->telefono << "  " << this->nombre;
 }

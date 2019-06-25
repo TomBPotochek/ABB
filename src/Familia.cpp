@@ -13,10 +13,10 @@ Lista<string>* Familia::obtenerNombre(){
 }
 
 void Familia::imprimirDatos(){
-    cout << telefono << endl;
+    cout << endl << telefono << "  ";
     nombres->iniciarCursor();
     while (nombres->avanzarCursor())
-        cout << nombres->obtenerCursor() << endl;
+        cout << nombres->obtenerCursor() << " ";
 }
 
 
@@ -27,7 +27,8 @@ void Familia::asignarNombre (Lista<string>* nombres){
 
 
 double Familia::calcularPrecio (int precio){
-    double precioTotal = nombres->contarElementos()*precio*(1-descuento);
+
+    double precioTotal = this->nombres->contarElementos()*precio*(1-descuento);
     return precioTotal;
 }
 

@@ -5,7 +5,7 @@ using namespace std;
 
 void Consola::imprimirMenu(){
 
-    cout << endl << "MENU PRINCIPAL" << endl << " Elija una opcion:" << endl << endl
+    cout << endl << endl << "MENU PRINCIPAL" << endl << " Elija una opcion:" << endl << endl
          << "1. Consultar precio" << endl
          << "2. Agregar un nuevo cliente" << endl
          << "3. Dar de baja un cliente" << endl
@@ -31,7 +31,7 @@ int Consola::ingresarOpcion() {
 }
 
 
-string ingresarNombre() {
+string Consola::ingresarNombre() {
 
 	string nombre;
 
@@ -41,7 +41,7 @@ string ingresarNombre() {
 	return nombre;
 }
 
-void imprimirMensaje(string mensaje) {
+void Consola::imprimirMensaje(string mensaje) {
 
 	cout << endl << mensaje << endl;
 }
@@ -71,7 +71,7 @@ void Consola::errorClienteNoEncontrado() {
 	cout << endl << "Error: no existe un cliente con el telefono ingresado";
 }
 
-double ingresarPrecio(){
+double Consola::ingresarPrecio(){
 
 	double precio;
 
@@ -81,7 +81,7 @@ double ingresarPrecio(){
 	return precio;
 }
 
-void imprimirPrecio(float precio){
+void Consola::imprimirPrecio(float precio){
 
 	cout << endl << "Precio a pagar: " << precio << endl;
 }
