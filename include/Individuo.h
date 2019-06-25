@@ -16,7 +16,7 @@ class Individuo : public Cliente {
         //Costructor
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Crea un objeto de clase Individuo.
-        Individuo (string nombre, double descuento):Cliente (std::string telefono);
+        Individuo (string nombre, double descuento):Cliente (telefono);
 
         //PRE:--
         //POST: Devulve el nombre del individuo.
@@ -30,7 +30,7 @@ class Individuo : public Cliente {
         //POST: Devuelve el precio total a pagar del individuo.
         double calcularPrecio (int precio);
 
-        void imprimirIntegrantes ();
+        void imprimirDatos ();
 
 };
 

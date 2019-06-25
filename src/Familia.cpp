@@ -3,7 +3,7 @@
 #include "Lista.h"
 
 
-Familia::Familia (Lista<string>* nombres, double descuento):Cliente (std::string telefono) {
+Familia::Familia (Lista<string>* nombres, double descuento):Cliente (telefono) {
     this->nombres = nombres;
     this->descuento = descuento;
 }
@@ -12,7 +12,8 @@ Lista<string>* Familia::obtenerNombre(){
     return this->nombres;
 }
 
-void Familia::imprimirIntegrantes(){
+void Familia::imprimirDatos(){
+    cout << telefono << endl;
     nombres->iniciarCursor();
     while (nombres->avanzarCursor())
         cout << nombres->obtenerCursor() << endl; 
