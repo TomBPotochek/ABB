@@ -33,7 +33,7 @@ class ABB {
         TDato buscar(TClave clave);
 
         // PRE: --
-        // POST: remueve del ABB el elemento con clave indicada
+        // POST: remueve del ABB el elemento con clave indicada. Devuelve un booleano dependiendo de si se eliminó.
         bool eliminar(TClave clave);
 
         // PRE: visitar es una funcion que devuelve void y recibe un dato de tipo TDato

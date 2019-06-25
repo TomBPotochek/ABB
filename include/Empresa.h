@@ -48,12 +48,12 @@ class Empresa {
         unsigned long int procesarTelefono(string strTelefono);
         
         // PRE: --
-        // POST: agrega al arbol un cliente ingresado por el usuario, devuelve TRUE si tuvo exito o FALSE si ya existia
-        bool agregarCliente(Cliente* cliente);
+        // POST: agrega al arbol un cliente ingresado por el usuario
+        void ingresarCliente();
         
         // PRE: --
         // POST: elimina del arbol el cliente ingresado por el usuario, devuelve TRUE si tuvo exito o FALSE si no existia
-        bool bajarCliente(Cliente* cliente);
+        void bajarCliente(Cliente* cliente);
         
         // PRE: --
         // POST: imprime la informacion de todos los clientes
