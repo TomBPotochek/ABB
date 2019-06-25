@@ -1,7 +1,6 @@
 #ifndef INDIVIDUO_H
 #define INDIVIDUO_H
 #include <iostream>
-#include <Cliente.h>
 
 const double DESCUENTO_I = 0.10;
 
@@ -16,7 +15,7 @@ class Individuo : public Cliente {
         //Costructor
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Crea un objeto de clase Individuo.
-        Individuo (string nombre, unsigned long int telefono);
+        Individuo (string nombre):Cliente (telefono);
 
         //PRE:--
         //POST: Devulve el nombre del individuo.
