@@ -17,6 +17,7 @@ class Familia : public Cliente {
         //Costructor
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Crea un objeto de clase Familia.
+
         Familia (Lista<string>* nombres):Cliente (telefono);
 
         //PRE:--

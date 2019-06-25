@@ -23,7 +23,7 @@ class Cliente {
         //POST: Modifica el telefono del cliente.
         void asignarTelefono (string dato);
 
-        virtual imprimirIntegrantes () = 0;
+        virtual imprimirDatos () = 0;
         virtual double calcularPrecio (int precio) = 0;
 
 };
