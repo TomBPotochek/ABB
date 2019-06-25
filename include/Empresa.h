@@ -37,7 +37,7 @@ class Empresa {
         // POST: agrega al árbol un cliente leído del archivo
         void cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea);
         
-        // PRE: --
+        // PRE: el texto debe no tener caracteres no numéricos
         // POST: convierte el número de teléfono de texto a numérico
         unsigned long int procesarTelefono(string strTelefono);
         
