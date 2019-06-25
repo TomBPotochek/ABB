@@ -29,14 +29,14 @@ int Consola::ingresarOpcion() {
 
     return opcion;
 }
-	
+
 
 string ingresarNombre() {
 
 	string nombre;
 
 	cout << "Ingrese el nombre de la persona";
-	cin << nombre;
+	cin >> nombre;
 
 	return nombre;
 }
@@ -51,7 +51,7 @@ unsigned long int Consola::ingresarTelefono(){
 	unsigned long int telefono;
 
 	cout << endl << "Ingrese el numero del cliente" << endl;
-	cin << telefono;
+	cin >> telefono;
 
 	return telefono;
 }
@@ -60,10 +60,10 @@ bool Consola::continuarIngresando() {
 
 	char opcion;
 
-	cout << intro << endl << "Desea continuar ingresando nombres? s/n";
-	cin opcion;
+	cout << endl << "Desea continuar ingresando nombres? s/n" << endl;
+	cin >> opcion;
 
-	return (opcion == 's')
+	return (opcion == 's');
 }
 
 void Consola::errorClienteNoEncontrado() {
@@ -76,12 +76,12 @@ double ingresarPrecio(){
 	double precio;
 
 	cout << endl << "Ingrese el precio fijo del producto" << endl;
-	cin << precio;
+	cin >> precio;
 
 	return precio;
 }
 
 void imprimirPrecio(float precio){
 
-	cout << endl << "Precio a pagar: " << precio << endl; 
+	cout << endl << "Precio a pagar: " << precio << endl;
 }
