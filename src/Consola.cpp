@@ -35,7 +35,22 @@ int Consola::ingresarOpcion() {
     return opcion;
 }
 
+*Cliente Consola::ingresarCliente() {
+	
+}
 
+unsigned long int Consola::ingresarTelefono(){
 
+}
 
+void errorClienteNoEncontrado() {
+	
+}
 
+float ingresarPrecio(){
+	
+}
+
+void imprimirPrecio(float precio){
+	
+}
