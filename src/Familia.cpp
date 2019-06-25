@@ -3,7 +3,7 @@
 #include "Lista.h"
 
 
-Familia::Familia (Lista<string>* nombres, double descuento):Cliente (telefono) {
+Familia::Familia (Lista<string>* nombres,):Cliente (telefono) {
     this->nombres = nombres;
     this->descuento = DESCUENTO_F;
 }

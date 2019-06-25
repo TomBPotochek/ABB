@@ -1,7 +1,7 @@
 #include "Individuo.h"
 
 
-Individuo::Individuo (string nombre, double descuento):Cliente(telefono) {
+Individuo::Individuo (string nombre,):Cliente(telefono) {
     this->nombre = nombre;
     this->descuento = DESCUENTO_I;
 }
