@@ -34,35 +34,35 @@ class Empresa {
     private:
     	
     	// PRE: --
-        // POST: libera los recursos asociados
+        // POST: agrega al árbol un cliente leído del archivo
         void cargarCliente(ABB<std::string, Cliente*>* clientes, std::string linea);
         
         // PRE: --
-        // POST: libera los recursos asociados
+        // POST: convierte el número de teléfono de texto a numérico
         unsigned long int procesarTelefono(string strTelefono);
         
         // PRE: --
-        // POST: libera los recursos asociados
+        // POST: agrega al árbol un cliente ingresado por el usuario, devuelve TRUE si tuvo éxito o FALSE si ya existía
         bool agregarCliente(Cliente* cliente);
         
         // PRE: --
-        // POST: libera los recursos asociados
+        // POST: elimina del árbol el cliente ingresado por el usuario, devuelve TRUE si tuvo éxito o FALSE si no existía
         bool bajarCliente(Cliente* cliente);
         
         // PRE: --
-        // POST: libera los recursos asociados
+        // POST: imprime la información de todos los clientes
         void listarClientes();
 		
 		// PRE: --
-        // POST: libera los recursos asociados
+        // POST: imprime la información del cliente que se pasa por parámetro
 		void imprimirCliente(Cliente* cliente);
 		
 		// PRE: --
-        // POST: libera los recursos asociados
+        // POST: devuelve el cliente buscado
         Cliente* buscarCliente(unsigned long int telefono);
         
         // PRE: --
-        // POST: libera los recursos asociados
+        // POST: imprime el precio teniendo en cuenta el descuento del cliente
         void consultarPrecio(Cliente* cliente, double precio);
 		
         // PRE: 1 <= opcion <= 6
