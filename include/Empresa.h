@@ -13,9 +13,11 @@ class Empresa {
 
     private:
 
-        ABB<Cliente*>* clientes;
+        ABB<unsigned long int, Cliente*>* clientes;
 
         Consola consola;
+        
+        unsigned long int semilla;
 
     public:
 
@@ -68,6 +70,8 @@ class Empresa {
         // PRE: 1 <= opcion <= 6
         // POST: lleva a cabo la operación indicada por 'opcion'
         void realizarOperacion(int opcion);
+        
+        void ingresarCliente();
         
         // PRE: --
         // POST: libera los recursos asociados

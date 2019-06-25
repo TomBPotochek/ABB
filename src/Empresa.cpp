@@ -1,7 +1,11 @@
 #include "Empresa.h"
+#include "Lista.h"
+#include "ABB.h"
 
 Empresa::Empresa() {
     this->clientes = 0;
+    this->consola = 0;
+    this->semilla = 10086200;
 }
 
 void Empresa::cargarClientes(const char* nombreArchivo){
@@ -107,6 +111,31 @@ void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los ca
 
 void Empresa::consultarPrecio(Cliente* cliente, double precio){
 	this->consola.imprimirPrecio((1 - cliente->obtenerDescuento() ) * precio);
+}
+
+void Empresa::ingresarCliente(){
+    unsigned long int telefonoNuevo = this->semilla;
+    while(this->clientes->buscar(telefonoNuevo) != 0)
+        telefonoNuevo++;
+    
+    this->consola.mensaje("Ingrese nombre: ");
+    std::string nombre = this->consola.ingresarNombre();
+    this->consola.mensaje("Si ingresa más nombres, será contado como familia");
+    bool opcion = this->consola.continuarIngresando();
+    if (opcion) {
+        Lista<std::string>* nombres = new Lista<std::string>;
+        nombres->agregar(nombre);
+        while (opcion){
+            this->consola.mensaje("Ingrese nombre: ");
+            nombre = this->consola.ingresarNombre();
+            nombres->agregar(nombre);
+            opcion = this->consola.continuarIngresando();
+        }
+        Familia* clienteNuevo = new Familia(nombres, telefonoNuevo);
+    } else 
+        Individuo* clienteNuevo = new Individuo(nombre, telefonoNuevo);
+           
+    this->clientes->agregar(telefonoNuevo, clienteNuevo);   
 }
 
 Empresa::~Empresa() {
