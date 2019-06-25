@@ -1,9 +1,9 @@
 #include "Individuo.h"
 
 
-Individuo::Individuo (string nombre, double descuento):Cliente(std::string telefono) {
+Individuo::Individuo (string nombre):Cliente(telefono) {
     this->nombre = nombre;
-    this->descuento = descuento;
+    this->descuento = DESCUENTO_I;
 }
 
 string Individuo::obtenerNombre (){
@@ -23,6 +23,7 @@ double Individuo::calcularPrecio (int precio){
 }
 
 
-void Individuos::imprimirIntegrantes (){
+void Individuos::imprimirDatos (){
+    cout << this->telefono << endl;
     cout << this->nombre << endl;
 }

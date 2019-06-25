@@ -7,16 +7,17 @@ class Cliente {
     private:
 
         string telefono;
+        double descuento;
 
     public:
         //Costructor
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Crea un objeto de clase cliente.
-        Cliente (string telefono);
+        Cliente (unsigned long int telefono);
 
         //PRE: --
         //POST: Devuelve el telefono del cliente.
-        string obtenerTelefono ();
+        unsigned long int obtenerTelefono ();
 
         //PRE: Se debe respetar el tipo de dato de los parametros.
         //POST: Modifica el telefono del cliente.
