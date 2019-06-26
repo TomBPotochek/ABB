@@ -3,15 +3,15 @@
 Empresa::Empresa() {
     this->clientes = 0;
     this->semilla = 10086200;
+    this->clientes = new ABB<unsigned long int, Cliente*>;
 }
 
 void Empresa::cargarClientes(const char* nombreArchivo){
     ifstream archivo(nombreArchivo);
-    this->clientes = new ABB<unsigned long int, Cliente*>;
 
     if (archivo.is_open()) {
     	string linea;
-        while (!archivo.eof()){ //o tal vez tenga que ser "while(getline(linea))" ?
+        while (!archivo.eof()){
             getline(archivo, linea);
             this->cargarCliente(linea);
         }
@@ -58,13 +58,20 @@ unsigned long int Empresa::procesarTelefono(string strTelefono) {
 	return telefono;
 }
 
-bool Empresa::agregarCliente(Cliente* cliente){
-	return this->clientes->agregar(cliente->obtenerTelefono(), cliente);
+void Empresa::agregarCliente(Cliente* cliente){
+
+	if (this->clientes->agregar(cliente->obtenerTelefono(), cliente)) {
+        this->consola.imprimirMensaje("El cliente fue agregado con exito");
+        cliente->imprimirDatos();
+	}
 }
 
 void Empresa::bajarCliente(unsigned long int telefono){
 
-    if (!this->clientes->eliminar(telefono))
+    if (this->clientes->eliminar(telefono))
+        this->consola.imprimirMensaje("El cliente fue eliminado con exito");
+
+    else
         this->consola.errorClienteNoEncontrado();
 }
 
@@ -76,7 +83,7 @@ void Empresa::imprimirCliente(Cliente* cliente){
 	if (cliente != 0) {
 		cliente->imprimirDatos();
 	} else {
-		cout << "Error: no existe un cliente con el telefono ingresado";
+		consola.errorClienteNoEncontrado();//cout << "Error: no existe un cliente con el telefono ingresado";
 	}
 }
 
@@ -100,7 +107,7 @@ void Empresa::menuOperativo(){
 	}
 }
 
-void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los casos
+void Empresa::realizarOperacion(int opcion) {
 
     switch(opcion) {
 
@@ -112,11 +119,16 @@ void Empresa::realizarOperacion(int opcion) {	//hay que modificarla segun los ca
     }
 }
 
-void Empresa::consultarPrecio(Cliente* cliente, double precio){
+void Empresa::consultarPrecio(Cliente* cliente, double precioFijo){
 
-	double total = cliente->calcularPrecio(precio);
+    if (cliente != 0) {
 
-	this->consola.imprimirPrecio(total);
+        double total = cliente->calcularPrecio(precioFijo);
+
+        cliente->imprimirDatos();
+        this->consola.imprimirPrecio(total);
+    } else
+        consola.errorClienteNoEncontrado();
 }
 
 Cliente* Empresa::ingresarCliente(){
@@ -126,18 +138,18 @@ Cliente* Empresa::ingresarCliente(){
 
     unsigned long int telefonoNuevo = this->semilla;
 
-    std::string nombre = this->consola.ingresarNombre();
-    this->consola.imprimirMensaje("Si ingresa más nombres, será contado como familia");
-    bool opcion = this->consola.continuarIngresando();
+    string nombre = this->consola.ingresarNombre();
+    this->consola.imprimirMensaje("Si ingresa más nombres, el cliente sera agregado como familia");
+    bool continuar = this->consola.continuarIngresando();
     Cliente* clienteNuevo;
 
-    if (opcion) {
-        Lista<std::string>* nombres = new Lista<std::string>;
+    if (continuar) {
+        Lista<string>* nombres = new Lista<string>;
         nombres->agregar(nombre);
-        while (opcion){
+        while (continuar){
             nombre = this->consola.ingresarNombre();
             nombres->agregar(nombre);
-            opcion = this->consola.continuarIngresando();
+            continuar = this->consola.continuarIngresando();
         }
         clienteNuevo = new Familia(nombres, telefonoNuevo);
     } else
@@ -146,6 +158,15 @@ Cliente* Empresa::ingresarCliente(){
     return clienteNuevo;
 }
 
+void Empresa::liberarCliente(Cliente* unCliente) {
+
+    delete unCliente;
+}
+
 Empresa::~Empresa() {
+
+    this->clientes->recorrer(this->liberarCliente);
     delete this->clientes;
 }
+
+Consola Empresa::consola; // Se define consola en el .cpp

@@ -8,7 +8,7 @@ Familia::Familia (Lista<string>* nombres, unsigned long int telefono): Cliente (
     this->descuento = DESCUENTO_F;
 }
 
-Lista<string>* Familia::obtenerNombre(){
+Lista<string>* Familia::obtenerNombres(){
     return this->nombres;
 }
 
@@ -20,7 +20,7 @@ void Familia::imprimirDatos(){
 }
 
 
-void Familia::asignarNombre (Lista<string>* nombres){
+void Familia::asignarNombres (Lista<string>* nombres){
     this->nombres = nombres;
 }
 

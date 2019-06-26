@@ -13,23 +13,25 @@ class Individuo : public Cliente {
 
 
     public:
-        //Costructor
-        //PRE: Se debe respetar el tipo de dato de los parametros.
-        //POST: Crea un objeto de clase Individuo.
+
+        // PRE: --
+        // POST: Crea un objeto de clase Individuo con los datos indicados.
         Individuo (string nombre, unsigned long int telefono);
 
-        //PRE:--
-        //POST: Devulve el nombre del individuo.
+        // PRE: --
+        // POST: Devulve el nombre del individuo.
         string obtenerNombre ();
 
-        //PRE: Se debe respetar el tipo de dato de los parametros
-        //POST: Modifica el nombre del individuo.
+        // PRE: --
+        // POST: Modifica el nombre del individuo.
         void asignarNombre (string nombre);
 
-        //PRE: Se debe respetar el tipo de dato de los parametros
-        //POST: Devuelve el precio total a pagar del individuo.
-        double calcularPrecio (int precio);
+        // PRE: --
+        // POST: Devuelve el precio total a pagar aplicando un descuento a precioFijo.
+        double calcularPrecio (int precioFijo);
 
+		// PRE: --
+		// POST: imprime nombre y telefono del individuo
         void imprimirDatos ();
 
 };

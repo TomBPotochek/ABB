@@ -35,8 +35,9 @@ string Consola::ingresarNombre() {
 
 	string nombre;
 
-	cout << "Ingrese el nombre de la persona";
-	cin >> nombre;
+	cout << "Ingrese el nombre de la persona" << endl;
+	cin.ignore();
+	getline(cin, nombre);
 
 	return nombre;
 }

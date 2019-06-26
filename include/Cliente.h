@@ -13,9 +13,9 @@ class Cliente {
         double descuento;
 
     public:
-        //Costructor
-        //PRE: Se debe respetar el tipo de dato de los parametros.
-        //POST: Crea un objeto de clase cliente.
+
+        // PRE: --
+        // POST: Crea un objeto de clase cliente.
         Cliente (unsigned long int telefono);
 
         // PRE: --
@@ -30,6 +30,7 @@ class Cliente {
 
         virtual double calcularPrecio (int precio) = 0;
 
+        virtual ~Cliente(){};
 };
 
 #endif // CLIENTE_H
