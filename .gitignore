@@ -6,3 +6,5 @@
 *.exe
 ./src/*.o
 *.cbp
+*.out
+
