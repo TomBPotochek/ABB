@@ -1,4 +1,4 @@
-
+﻿
 *.dev
 *.layout
 *.o
@@ -7,4 +7,6 @@
 ./src/*.o
 *.cbp
 *.out
+*.zip
+
 
