@@ -36,6 +36,10 @@ class Familia : public Cliente {
         // PRE: --
         // POST: Lista los nombres de los integrantes de la familia y el telefono
         void imprimirDatos ();
+        
+        // PRE: --
+        // POST: Libera el puntero a la lista de nombres
+        ~Familia ();
 };
 
 #endif // FAMILIA_H

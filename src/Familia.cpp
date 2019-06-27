@@ -32,3 +32,7 @@ double Familia::calcularPrecio (int precio){
     return precioTotal;
 }
 
+Familia::~Familia(){
+    delete nombres;
+}
+
