@@ -11,8 +11,7 @@ void Empresa::cargarClientes(const char* nombreArchivo){
 
     if (archivo.is_open()) {
     	string linea;
-        while (!archivo.eof()){
-            getline(archivo, linea);
+        while (getline(archivo, linea)){
             this->cargarCliente(linea);
         }
     }
@@ -20,7 +19,7 @@ void Empresa::cargarClientes(const char* nombreArchivo){
 }
 
 void Empresa::cargarCliente(std::string linea){
-    unsigned int posComa = linea.find(",");
+    size_t posComa = linea.find(",");
     unsigned long int telefono = this->procesarTelefono(linea.substr(0,posComa));
 
 	linea = linea.substr(posComa+1);
